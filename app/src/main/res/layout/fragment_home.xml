@@ -7,42 +7,49 @@
     tools:context=".ui.home.HomeFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/creditScoreView"
         android:layout_width="250dp"
         android:layout_height="250dp"
         android:background="@drawable/circular_shape_drawable"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="gone">
 
         <ProgressBar
             android:id="@+id/progress_bar"
             style="@style/CircularDeterminateProgressBar"
             android:layout_width="320dp"
             android:layout_height="320dp"
-            android:progress="60"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:progress="60" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/text_credit_score"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/gothic_semi_bold"
             android:text="@string/tx_your_credit_score_is"
+            android:textColor="@color/black_300"
+            android:textSize="@dimen/text_size_big"
             app:layout_constraintBottom_toBottomOf="@id/progress_bar"
             app:layout_constraintEnd_toEndOf="@+id/progress_bar"
             app:layout_constraintStart_toStartOf="@+id/progress_bar"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.35" />
+            app:layout_constraintVertical_bias="0.31" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/text_user_score"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="6dp"
+            android:textColor="@color/chrome_yellow"
+            android:textSize="@dimen/credit_score_text_size"
             app:layout_constraintEnd_toEndOf="@+id/progress_bar"
             app:layout_constraintStart_toStartOf="@+id/progress_bar"
             app:layout_constraintTop_toBottomOf="@id/text_credit_score"
@@ -53,6 +60,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="6dp"
+            android:fontFamily="@font/gothic_semi_bold"
+            android:textColor="@color/black_300"
+            android:textSize="@dimen/text_size_big"
             app:layout_constraintEnd_toEndOf="@+id/progress_bar"
             app:layout_constraintStart_toStartOf="@+id/progress_bar"
             app:layout_constraintTop_toBottomOf="@id/text_user_score"
@@ -60,4 +70,58 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/loadingView"
+        android:layout_width="@dimen/match_constraint_width"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="gone">
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/top_margin_extra_small"
+            android:fontFamily="@font/gothic_semi_bold"
+            android:text="@string/tx_please_wait"
+            android:textSize="@dimen/text_size_big" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/errorView"
+        android:layout_width="@dimen/match_constraint_width"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            app:srcCompat="@drawable/img_error_image" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/error_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/top_margin_extra_small"
+            android:fontFamily="@font/gothic_semi_bold"
+            android:gravity="center"
+            android:textSize="@dimen/text_size_big"
+            tools:text="Something went wrong" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
 </androidx.constraintlayout.widget.ConstraintLayout>

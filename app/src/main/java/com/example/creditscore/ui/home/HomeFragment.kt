@@ -3,11 +3,12 @@ package com.example.creditscore.ui.home
 import android.os.Bundle
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import com.example.creditscore.R
 import com.example.creditscore.databinding.FragmentHomeBinding
 import com.example.creditscore.ui.base.BaseFragment
+import com.example.creditscore.ui.home.FetchCreditInfoResponse.*
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collect
 
@@ -26,24 +27,41 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
     }
 
     private fun observeCreditScore() {
-        lifecycleScope.launchWhenStarted {
-            homeFragmentViewModel.creditInfoResponse.collect {
-                when (it) {
-                    is FetchCreditInfoResponse.Initial -> {
-                    }
+        with(binding) {
+            lifecycleScope.launchWhenStarted {
+                homeFragmentViewModel.creditInfoResponse.collect {
+                    renderViews(it)
+                    when (it) {
+                        is Initial -> {
+                        }
 
-                    is FetchCreditInfoResponse.Loading -> {
-                    }
+                        is Loading -> {
+                        }
 
-                    is FetchCreditInfoResponse.Success -> {
-                        println("fetched credit report is ${it.creditReport}")
-                    }
+                        is Success -> {
+                            val creditScoreText =
+                                getString(R.string.tx_credit_score, it.creditReport.maxScoreValue)
+                            textMaxCreditScore.text = creditScoreText
+                            textUserScore.text = it.creditReport.score.toString()
+                            progressBar.progress = it.creditReport.creditPercent
 
-                    is FetchCreditInfoResponse.Failure -> {
-                        Toast.makeText(requireContext(), it.message, Toast.LENGTH_LONG).show()
+                            creditScoreView.setOnClickListener { }
+                        }
+
+                        is Failure -> {
+                            errorTextview.text = it.message
+                        }
                     }
                 }
             }
+        }
+    }
+
+    private fun renderViews(viewState: FetchCreditInfoResponse) {
+        with(binding) {
+            errorView.visibility = if (viewState is Failure) View.VISIBLE else View.GONE
+            loadingView.visibility = if (viewState is Loading) View.VISIBLE else View.GONE
+            creditScoreView.visibility = if (viewState is Success) View.VISIBLE else View.GONE
         }
     }
 }

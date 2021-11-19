@@ -6,7 +6,8 @@
         <entry key="app/src/main/res/drawable/circular_shape_drawable.xml" value="0.11" />
         <entry key="app/src/main/res/drawable/progressbar_circle.xml" value="0.11" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_credit_score_detail.xml" value="0.12563323201621074" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.25" />
       </map>
     </option>
   </component>

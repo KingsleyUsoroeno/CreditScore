@@ -8,4 +8,7 @@ data class CreditReport(
     val maxScoreValue: Int,
     val minScoreValue: Int,
     val percentageCreditUsed: Int,
-)
+) {
+    val creditPercent: Int
+        get() = ((score.toDouble() / maxScoreValue) * 100).toInt()
+}
