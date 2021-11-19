@@ -15,7 +15,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:visibility="gone">
+        tools:visibility="visible">
 
         <ProgressBar
             android:id="@+id/progress_bar"
@@ -41,13 +41,13 @@
             app:layout_constraintEnd_toEndOf="@+id/progress_bar"
             app:layout_constraintStart_toStartOf="@+id/progress_bar"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.31" />
+            app:layout_constraintVertical_bias="0.28" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/text_user_score"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="6dp"
+            android:layout_marginTop="@dimen/top_margin_extra_small"
             android:textColor="@color/chrome_yellow"
             android:textSize="@dimen/credit_score_text_size"
             app:layout_constraintEnd_toEndOf="@+id/progress_bar"
@@ -59,15 +59,14 @@
             android:id="@+id/text_max_credit_score"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="6dp"
+            android:layout_marginTop="@dimen/top_margin_extra_small"
             android:fontFamily="@font/gothic_semi_bold"
             android:textColor="@color/black_300"
             android:textSize="@dimen/text_size_big"
             app:layout_constraintEnd_toEndOf="@+id/progress_bar"
             app:layout_constraintStart_toStartOf="@+id/progress_bar"
             app:layout_constraintTop_toBottomOf="@id/text_user_score"
-            tools:text="Out of 700" />
-
+            tools:text="out of 700" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.appcompat.widget.LinearLayoutCompat
@@ -102,6 +101,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:orientation="vertical"
+        tools:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

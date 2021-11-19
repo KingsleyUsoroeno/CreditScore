@@ -33,8 +33,8 @@ abstract class BaseFragment<V> : Fragment() where V : ViewBinding {
         findNavController().navigate(direction)
     }
 
-    protected fun navigate(@IdRes resId: Int) {
-        findNavController().navigate(resId)
+    protected fun navigate(@IdRes resId: Int, args: Bundle = Bundle()) {
+        findNavController().navigate(resId, args)
     }
 
     protected fun navigateUp() {

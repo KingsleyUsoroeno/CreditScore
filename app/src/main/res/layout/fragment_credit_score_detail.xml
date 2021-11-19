@@ -1,9 +1,124 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.detail.CreditScoreDetailFragment">
 
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="@dimen/match_constraint_width"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardElevation="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="8dp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tx_score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gothic_semi_bold"
+                android:text="@string/tx_score"
+                android:textColor="@color/black_300"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tx_user_score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tx_score"
+                tools:text="513" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tx_max_score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/top_margin_small"
+                android:fontFamily="@font/gothic_semi_bold"
+                android:text="@string/tx_max_score"
+                android:textColor="@color/black_300"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tx_score" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/text_max_credit_score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@+id/tx_max_score"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tx_max_score"
+                tools:text="513" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tx_account_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/top_margin_small"
+                android:fontFamily="@font/gothic_semi_bold"
+                android:text="@string/tx_account_status"
+                android:textColor="@color/black_300"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tx_max_score" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tx_user_account_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@id/tx_account_status"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tx_account_status"
+                tools:text="InActive" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tx_min_score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/top_margin_small"
+                android:fontFamily="@font/gothic_semi_bold"
+                android:text="@string/tx_min_score"
+                android:textColor="@color/black_300"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tx_account_status" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tx_user_min_score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@+id/tx_min_score"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tx_min_score"
+                tools:text="0" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tx_personal_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/top_margin_small"
+                android:fontFamily="@font/gothic_semi_bold"
+                android:text="@string/tx_personal_type"
+                android:textColor="@color/black_300"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tx_min_score" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tx_personal_type_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@id/tx_personal_type"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tx_personal_type"
+                tools:text="Success" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

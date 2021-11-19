@@ -3,4 +3,9 @@
     <string name="tx_your_credit_score_is">Your credit score is</string>
     <string name="tx_please_wait">Please Wait</string>
     <string name="tx_credit_score">out of %1$d</string>
+    <string name="tx_score">Score</string>
+    <string name="tx_max_score">Max score</string>
+    <string name="tx_account_status">Account status</string>
+    <string name="tx_min_score">Min Score</string>
+    <string name="tx_personal_type">Personal Type</string>
 </resources>

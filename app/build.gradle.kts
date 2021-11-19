@@ -11,6 +11,7 @@ plugins {
     kotlin(kotlinAndroid)
     kotlin(kotlinKapt)
     daggerHilt
+    kotlinParcelize
 }
 
 android {
