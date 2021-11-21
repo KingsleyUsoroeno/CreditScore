@@ -20,4 +20,5 @@ object Versions {
     const val hiltViewModel: String = "1.0.0-alpha02"
     const val retrofitVersion: String = "2.9.0"
     const val runner: String = "1.2.0"
+    const val mockWebServer: String = "4.7.2"
 }

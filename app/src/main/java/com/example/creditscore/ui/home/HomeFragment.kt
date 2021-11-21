@@ -51,7 +51,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
     private fun initCreditScoreView(creditReport: CreditReport) {
         with(binding) {
             val creditScoreText =
-                getString(R.string.tx_credit_score, creditReport.maxScoreValue)
+                getString(R.string.credit_score_placeholder, creditReport.maxScoreValue)
             textMaxCreditScore.text = creditScoreText
             textUserScore.text = creditReport.score.toString()
             progressBar.progress = creditReport.creditPercent

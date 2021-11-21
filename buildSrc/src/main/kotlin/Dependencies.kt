@@ -72,6 +72,8 @@ object Dependencies {
             "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.coroutines}"
         const val robolectric: String = "org.robolectric:robolectric:${Versions.robolectric}"
         const val androidXTestCore = "androidx.test:core:${Versions.androidXTestCore}"
+        const val mockWebServer: String =
+            "com.squareup.okhttp3:mockwebserver:${Versions.mockWebServer}"
     }
 
     object DI {

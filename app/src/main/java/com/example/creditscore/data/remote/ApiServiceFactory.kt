@@ -1,6 +1,7 @@
 package com.example.creditscore.data.remote
 
 import com.example.creditscore.data.remote.interceptor.NoInternetInterceptor
+import com.google.gson.Gson
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -11,20 +12,17 @@ object ApiServiceFactory {
 
     private const val BASE_URL: String = "https://android-interview.s3.eu-west-2.amazonaws.com/"
 
-    fun createApiService(isDebug: Boolean): ApiService {
+    fun buildCreditScoreApiService(isDebug: Boolean): CreditScoreApiService {
         val okHttpClient: OkHttpClient = makeOkHttpClient(
             makeLoggingInterceptor((isDebug))
         )
-        return makeApiService(okHttpClient)
-    }
-
-    private fun makeApiService(okHttpClient: OkHttpClient): ApiService {
         val retrofit: Retrofit = Retrofit.Builder()
             .baseUrl(BASE_URL)
             .client(okHttpClient)
-            .addConverterFactory(GsonConverterFactory.create())
+            .addConverterFactory(GsonConverterFactory.create(Gson()))
             .build()
-        return retrofit.create(ApiService::class.java)
+
+        return retrofit.create(CreditScoreApiService::class.java)
     }
 
     private fun makeOkHttpClient(httpLoggingInterceptor: HttpLoggingInterceptor): OkHttpClient {

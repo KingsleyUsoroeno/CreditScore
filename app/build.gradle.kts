@@ -86,4 +86,5 @@ dependencies {
     testImplementation(Test.androidXTestCore)
     testImplementation(Test.coroutinesTest)
     testImplementation(Test.robolectric)
+    testImplementation(Test.mockWebServer)
 }

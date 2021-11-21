@@ -4,8 +4,8 @@ import com.example.creditscore.BuildConfig
 import com.example.creditscore.data.CreditScoreRemoteRepository
 import com.example.creditscore.data.CreditScoreRepository
 import com.example.creditscore.data.impl.CreditScoreRepositoryImpl
-import com.example.creditscore.data.remote.ApiService
 import com.example.creditscore.data.remote.ApiServiceFactory
+import com.example.creditscore.data.remote.CreditScoreApiService
 import com.example.creditscore.data.remote.impl.CreditScoreRemoteRepositoryImpl
 import dagger.Binds
 import dagger.Module
@@ -26,8 +26,8 @@ interface AppModule {
 
     companion object {
         @[Provides Singleton]
-        fun provideApiService(): ApiService {
-            return ApiServiceFactory.createApiService(BuildConfig.DEBUG)
+        fun provideApiService(): CreditScoreApiService {
+            return ApiServiceFactory.buildCreditScoreApiService(BuildConfig.DEBUG)
         }
     }
 }
